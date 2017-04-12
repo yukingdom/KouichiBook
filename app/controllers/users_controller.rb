@@ -7,4 +7,10 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   end
   
+  def delete
+  	@user = User.find(params[:id])
+	@user.destroy
+	redirect_to new_user_session_path
+  end
+
 end
